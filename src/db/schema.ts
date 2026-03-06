@@ -9,3 +9,9 @@ export const postsTable = pgTable("Posts", {
   updatedAt: timestamp("updatedAt").defaultNow().notNull()
 });
 
+export const usersTable = pgTable("Users", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  email: varchar({ length:255 }).notNull(),
+  password: varchar("password", { length:255 }).notNull()
+})
+
