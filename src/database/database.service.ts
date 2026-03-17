@@ -8,9 +8,7 @@ export class DrizzleService implements OnModuleInit, OnModuleDestroy {
   public db: NodePgDatabase;
   private pool: Pool;
 
-  constructor(
-    private readonly configService: ConfigService,
-  ) {}
+  constructor(private readonly configService: ConfigService) {}
 
   onModuleInit() {
     this.pool = new Pool({
